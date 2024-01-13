@@ -10,7 +10,12 @@ const containerStyles = {
 export default function Tree2(props) {
   const [translate, setTranslate] = useState({});
   const treeContainerRef = useRef(null);
-  const data=useSelector(x=>x)
+  const { level, treeParams } = useSelector(x=>{
+    return {
+      level: x.level,
+      treeParams: x.treeParams,
+    }
+  })
   const debugData = [
     {
       name: props.user1?.toUpperCase(),
@@ -3638,7 +3643,7 @@ export default function Tree2(props) {
     }, 500);
     return () => clearTimeout(timeout);
   }, [
-    data.treeParams,
+    treeParams,
     props.user1,
     props.user2,
     props.user3,
@@ -4171,7 +4176,7 @@ export default function Tree2(props) {
         // pathFunc="step"
         collapsible={true}
         onNodeToggle={handleNodeToggle}
-        initialDepth={data.level}
+        initialDepth={level}
         depthFactor={510}
       />
     </div>

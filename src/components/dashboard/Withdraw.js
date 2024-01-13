@@ -18,7 +18,12 @@ export default function Withdraw({ setIsModalOpen }) {
   };
   const totalAmount = +amount + +transactionFees;
   const [state, setState] = useState("Balance");
-  const data=useSelector(x=>x)
+  const {username, refferalID}=useSelector(x=>{
+    return {
+      username: x.username,
+      refferalID: x.refferalID
+    }
+  })
   const widthdraw=()=>{
     setloading(true),
     API.fetchPost({Withdraw_payment:totalAmount},'/withdraw')
@@ -79,11 +84,11 @@ export default function Withdraw({ setIsModalOpen }) {
         
             <div className="flex text-primary">
               Name:
-              <p className="mx-2 text-primary font-bold uppercase">{data&&data.username}</p>
+              <p className="mx-2 text-primary font-bold uppercase">{username}</p>
             </div>
             <div className="flex text-primary">
               Refferal ID:
-              <p className="mx-2 text-primary font-bold">{data&&data.refferalID}</p>
+              <p className="mx-2 text-primary font-bold">{refferalID}</p>
             </div>
           </div>
         {state == "Balance" && <div>

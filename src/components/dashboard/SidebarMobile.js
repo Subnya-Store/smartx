@@ -8,7 +8,7 @@ import { MdEmojiPeople } from "react-icons/md";
 // import {MdEmojiPeople} from "react-icons/io"
 import { GiTakeMyMoney } from "react-icons/gi"
 import Link from "next/link";
-import { useDispatch,useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { useEffect } from "react";
 
 export default function SidebarMobile({ name }) {

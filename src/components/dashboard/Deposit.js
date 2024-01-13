@@ -1,9 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import { AiOutlineClose } from "react-icons/ai";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 export default function Deposit({ setIsModalOpen }) {
-  const data = useSelector((x) => x);
+  const { refferalID, username } = useSelector((x) => {
+    return {
+      refferalID: x.refferalID,
+      username: x.username
+    }
+  });
   return (
     <div>
       <div>
@@ -19,13 +24,13 @@ export default function Deposit({ setIsModalOpen }) {
           <div className="flex text-primary">
             Name:
             <p className="mx-2 text-primary font-bold uppercase">
-              {data && data.username}
+              {username}
             </p>
           </div>
           <div className="flex text-primary">
             Refferal ID:
             <p className="mx-2 text-primary font-bold">
-              {data && data.refferalID}
+              {refferalID}
             </p>
           </div>
         </div>

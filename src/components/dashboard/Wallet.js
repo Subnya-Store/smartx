@@ -1,29 +1,18 @@
 import React, { useState, useEffect } from "react";
-import Modal from "react-modal";
-import UpgradeFromWallet from "./UpgradeFromWallet";
-import { useSelector } from "react-redux";
 import API from "../../API/API";
-import { GiTeamUpgrade } from "react-icons/gi";
 import { BsArrowRightShort } from "react-icons/bs";
 import { fetchBalance } from "wagmi/actions";
-import { useWalletClient, useAccount } from "wagmi";
+import {  useAccount } from "wagmi";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 
 export default function Wallet() {
-  const [isModalOpen, setIsModalOpen] = useState(false);
   const [wallet, setWallet] = useState(0);
-  const { data: walletClient } = useWalletClient();
-  const { address, isConnected } = useAccount();
+  const { address } = useAccount();
   const [balance, setBalance] = useState(0)
   const [Usdt, setUsdt] = useState(0)
   const [show, setshow] = useState(true)
   const [Placements, setPlacements] = useState(0)
   const [Refferals, setRefferals] = useState(0)
-
-  const data = useSelector((state) => state);
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
 
   useEffect(() => {
     API.fetchGet("/wallet")

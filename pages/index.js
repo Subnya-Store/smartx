@@ -1,30 +1,22 @@
 // import { Dashboard } from '@mui/icons-material'
-import React,{useEffect,useState} from 'react'
-import Header1 from '../src/components/HeaderTime'
-import Slider from '../src/components/Slider'
+import React, { useEffect, useState } from 'react';
 import Home from '../src/Mui/Home'
-import Dashboard  from './dashboard'
+import Dashboard from './dashboard'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import { useSelector } from 'react-redux'
-
 
 export default function index() {
-  const [Token,setToken]=useState(null)
-  const [Pressed,setPressed]=useState(null)
-  const selector = useSelector(x=>x)
+  const [Token, setToken] = useState(null)
 
-  useEffect(()=>{
+  useEffect(() => {
     const user = localStorage.getItem('user')
-    
+
     setToken(user)
-  },[])
-  useEffect(()=>{
-    console.log(selector)
-  },[Pressed])
+  }, [])
+
   return (
     <div>
-     {/* <HeaderTime/> */}
+      {/* <HeaderTime/> */}
       {/* <Slider/> */}
       <ToastContainer
         position="top-right"
@@ -38,7 +30,7 @@ export default function index() {
         pauseOnHover
         theme="light"
       />
-    {Token != null?<Dashboard Token={Token} toast={toast}/>:<Home toast={toast}/>}
+      {Token != null ? <Dashboard Token={Token} toast={toast} /> : <Home toast={toast} />}
     </div>
   )
 }

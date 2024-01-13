@@ -14,7 +14,7 @@ import { getContract, waitForTransaction, fetchBalance, fetchToken, PrepareWrite
 import AgayKaKaam from "../kaam/AgayKaKaam";
 
 export default function Plans() {
-  const selectorData = useSelector(x => x)
+  const setModalmsg = useSelector(x => x.setModalmsg)
 
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [isModalOpen2, setIsModalOpen2] = useState(false);
@@ -53,7 +53,7 @@ export default function Plans() {
       .then(x => setpakages(x.data.packages))
       .catch(err => console.log(err))
     setIsModalOpen(false);
-  }, [msg, refresh, selectorData.setModalmsg])
+  }, [msg, refresh, setModalmsg])
   // const [_amount, set_amount] = useState(value?.pkg_price);
   // console.log({ msg: 'value price', Values })
   const test = async (e) => {

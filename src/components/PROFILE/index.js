@@ -22,7 +22,7 @@ export default function profile() {
   const [active, setActivate] = useState("")
   const [state, setState] = useState(10);
   const [modalIsOpen, setIsOpen] = useState(false);
-  const datas = useSelector((state) => state);
+  const refferalID = useSelector((state) => state.refferalID);
   const dispatch = useDispatch()
   const [isModalOpen, setIsModalOpen] = useState(false);
 
@@ -79,7 +79,7 @@ export default function profile() {
   const inputRef = useRef(null);
 
   const handleCopyClick = () => {
-    navigator.clipboard.writeText(`https://www.smartxblockchain.com/?ref=${datas.refferalID}`);
+    navigator.clipboard.writeText(`https://www.smartxblockchain.com/?ref=${refferalID}`);
     document.execCommand('copy');
     showTooltip();
   };
@@ -242,7 +242,7 @@ export default function profile() {
               // (state == 3 && <Pakages />)
               state == 4 && (<div className="sm:mx-[30%] ">
                 <div className="font-bold text-xs md:xl w-[100%] md:w-auto text-primary p-4 border border-primary rounded-3xl">
-                  smartxblockchain.com/?ref={datas.refferalID}
+                  smartxblockchain.com/?ref={refferalID}
                 </div>
                 <div className="tooltip w-full">
                   <button className="border border-primary w-full p-2 px-3 rounded-3xl text-texting bg-primary" onClick={handleCopyClick} onMouseOut={resetTooltip}>

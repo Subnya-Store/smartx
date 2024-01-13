@@ -2,10 +2,6 @@ import React, { useState, useEffect } from "react";
 import MainDashboard from "../src/components/Dashboard/MainDashboard";
 import Sidebar from "../src/components/dashboard/Sidebar";
 import SidebarMobile from "../src/components/dashboard/SidebarMobile";
-import jwt_decode from "jwt-decode";
-import axios from 'axios'
-import apiUrl from "../redux/services/api";
-import SliderDB from "../src/components/SliderDB";
 import { useDispatch, useSelector } from "react-redux";
 import Api from '../src/API/API'
 import { ToastContainer } from "react-toastify";
@@ -15,10 +11,9 @@ import PlacementTreeNew from "../src/components/dashboard/PlacementTreeNew";
 import Profile from "../src/components/PROFILE";
 
 export default function Dashboard({ Token }) {
-  const [data, setdata] = useState(false);
   const [name, setname] = useState(false);
   const dispatch = useDispatch()
-  const dataS = useSelector(x => x)
+  const PageState = useSelector(x => x.PageState)
   const [reff, setReff] = useState([]);
 
   const router = useRouter();
@@ -93,9 +88,9 @@ export default function Dashboard({ Token }) {
       <Sidebar name={name} />
       <SidebarMobile name={name} />
       {/* <SliderDB/> */}
-      {dataS.PageState == 'dashboard' && <MainDashboard Token={Token} name={name} />}
-      {dataS.PageState == 'transaction' && <Transaction />}
-      {dataS.PageState == 'smartmatrix' && <div className='flex w-full h-[90%] flex-row'>
+      {PageState == 'dashboard' && <MainDashboard Token={Token} name={name} />}
+      {PageState == 'transaction' && <Transaction />}
+      {PageState == 'smartmatrix' && <div className='flex w-full h-[90%] flex-row'>
         {Token ? (
           <div className='w-full'>
             <div className='flex flex-col w-full overflow-y-auto'>
@@ -134,7 +129,7 @@ export default function Dashboard({ Token }) {
           </div>
         ) : <p>Loading..</p>}
       </div>}
-      {dataS.PageState == 'profile' && <Profile/>}
+      {PageState == 'profile' && <Profile/>}
     </div>
   );
 }

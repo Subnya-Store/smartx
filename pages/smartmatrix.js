@@ -3,8 +3,7 @@ import Sidebar from '../src/components/dashboard/Sidebar';
 import SidebarMobile from '../src/components/dashboard/SidebarMobile';
 import PlacementTreeNew from '../src/components/dashboard/PlacementTreeNew';
 import API from '../src/API/API';
-import jwt_decode from "jwt-decode";
-import { useDispatch, useSelector } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import Home from '../src/Mui/Home';
 
 export default function smartmatrix() {

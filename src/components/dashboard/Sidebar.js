@@ -14,7 +14,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 export default function Sidebar({ name }) {
   const [open, setOpen] = useState(false);
-  const data = useSelector((state) => state);
+  const username = useSelector((state) => state.username);
   const dispatch = useDispatch()
   return (
     <div
@@ -34,7 +34,7 @@ export default function Sidebar({ name }) {
             <div className="flex flex-row justify-between items-center px-2 w-[100%]">
               {open && (
                 <div className="hidden sm:flex uppercase cursor-pointer text-sm text-texting ">
-                  {data && data.username}
+                  {username}
                 </div>
               )}
               {open && (

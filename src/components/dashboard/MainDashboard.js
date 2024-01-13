@@ -1,21 +1,15 @@
 import React, { useState } from "react";
 import TopHeaderDB from "./TopHeaderDB";
-import Balance from "./Balance";
 import RefferalTable from "./RefferalTable";
-import RefferalTable2 from "./RefferalTable2";
-import axios from "axios";
 import Plans from "./Plans";
 import SliderDB from "../SliderDB";
 import Wallet from "./Wallet";
-import ProductCategories from "../../Mui/Components/ProductCategories";
-import { useDispatch, useSelector } from "react-redux";
 import NewsTicker from "../NewsTicker";
 // import PlanTest from "./PlanTest";
 import Modal from 'react-modal'
 
 export default function MainDashboard({ name, Token }) {
   const [alert, setAlert] = useState(false)
-  const data = useSelector(x => x)
   return (
     <div className=" overflow-x-scroll">
       <div className="sm:mb-10 mb-52">

@@ -4,16 +4,15 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { CgProfile } from "react-icons/cg";
 import { MdEmail } from "react-icons/md";
-import { AiFillPhone, AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
+import { AiFillPhone } from "react-icons/ai";
 import { FaHubspot, FaRegAddressCard } from "react-icons/fa";
-import { FiCopy } from "react-icons/fi";
 import { useSelector } from "react-redux";
 import { useAccount } from "wagmi";
 
 
 export default function Edit() {
   const { address: addressx, isConnected } = useAccount();
-  const datax = useSelector(x => x)
+  const refferalID = useSelector(x => x.refferalID);
 
   const [getfull_name, setgetfullname] = useState("");
   const [getemail, setgetemail] = useState("");
@@ -539,7 +538,7 @@ export default function Edit() {
               <div className="flex gap-1">
                 <FaHubspot className="text-primary" size={20} />
                 <div className="text-primary font-bold">
-                  {datax.refferalID}
+                  {refferalID}
                 </div>
               </div>
               {/* <div>
