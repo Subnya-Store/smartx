@@ -15,7 +15,7 @@ import {
 import { configureChains, createConfig, WagmiConfig } from "wagmi";
 import { bsc,bscTestnet,sepolia} from "wagmi/chains";
 import { publicProvider } from "wagmi/providers/public";
-import store from "../redux/Store"; 
+import store from "../redux/store"; 
 import { Provider } from "react-redux"; 
 import AOS from "aos";
 import "aos/dist/aos.css";
