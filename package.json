@@ -1,9 +1,9 @@
 {
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build && next export",
-    "start": "next start"
+    "dev": "npx next dev",
+    "build": "npx next build",
+    "start": "npx next start"
   },
   "dependencies": {
     "@balkangraph/familytree.js": "^1.7.26",

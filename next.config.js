@@ -2,6 +2,7 @@
 // var API_URL="https://www.privateadminapi.smartxblockchain.com/";
 const nextConfig = {
   reactStrictMode: true,
+  output: 'export',
   // async rewrites() {
   //   return [
   //     {
