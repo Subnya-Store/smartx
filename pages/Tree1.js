@@ -1,6 +1,6 @@
 import { useState, useCallback } from "react";
 import React from 'react';
-import Tree from "./Tree";
+import Tree from "./tree";
 
 export default function Tree2() {
   const [translate, setTranslate] = useState({});
