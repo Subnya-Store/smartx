@@ -1,6 +1,5 @@
 import React, { useCallback, useEffect, memo } from 'react'
 import { erc20ABI, useContractWrite, useWaitForTransactionReceipt, useContractEvent } from 'wagmi';
-import Decode from 'jwt-decode'
 import abi from '../../Data/Abis.json'
 import API from '../../API/API';
 import { parseEther } from "viem";

@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
 import apiUrl from "../../../redux/services/api";
-import jwtDecode from "jwt-decode";
 import moment from "moment/moment";
 import Api from '../../API/API'
 

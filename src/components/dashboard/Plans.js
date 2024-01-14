@@ -7,11 +7,11 @@ import { AiFillLock, AiOutlineLoading3Quarters } from 'react-icons/ai';
 import { parseEther } from "viem";
 import abi from '../../Data/Abis.json'
 // import { useContractEvent } from 'wagmi'
-import Decode from 'jwt-decode'
 
 import { useWalletClient, useAccount, usePublicClient, erc20ABI, usePrepareContractWrite, useContractEvent, useContractWrite, useTransaction, useWaitForTransaction } from "wagmi";
 import { getContract, waitForTransaction, fetchBalance, fetchToken, PrepareWriteContractConfig } from "wagmi/actions";
 import AgayKaKaam from "../kaam/AgayKaKaam";
+import { Decode } from "../../utility";
 
 export default function Plans() {
   const setModalmsg = useSelector(x => x.setModalmsg)

@@ -7,9 +7,9 @@ import { useRouter } from "next/router";
 import abi from '../../Data/Abis.json'
 import { parseEther } from "viem";
 import API from "../../API/API";
-import Decode from 'jwt-decode'
 import UpgradeKaKaam from "../kaam/UpgradeKaKaam";
 import AgayKaKaam from "../kaam/AgayKaKaam";
+import { Decode } from "../../utility";
 
 export default function UpgradeFromWallet({
   isModalOpen,

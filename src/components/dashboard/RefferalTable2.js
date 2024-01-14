@@ -1,7 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
-import apiUrl from "../../../redux/services/api";
-import jwtDecode from "jwt-decode";
+import { Decode } from "../../utility";
 
 export default function RefferalTable2() {
   const [refferal, setRefferal] = useState(null);
@@ -9,7 +8,7 @@ export default function RefferalTable2() {
 
   const apidata = async () => {
     const user = await localStorage.getItem("user");
-    const decode = await jwtDecode(user);
+    const decode = Decode(user);
     settoken(decode);
     await axios
       .post("https://api.smartxblockchain.com/showreffusers", {

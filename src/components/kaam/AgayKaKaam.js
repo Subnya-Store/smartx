@@ -1,11 +1,11 @@
 import React, { useCallback, useEffect, memo } from 'react'
 import { erc20ABI, useContractWrite, useWaitForTransactionReceipt, useContractEvent } from 'wagmi';
-import Decode from 'jwt-decode'
 import abi from '../../Data/Abis.json'
 import API from '../../API/API';
 
 import { createPublicClient, http } from 'viem'
 import { mainnet, sepolia } from 'viem/chains'
+import { Decode } from '../../utility';
 
 export const publicClient = createPublicClient({
     chain: sepolia,

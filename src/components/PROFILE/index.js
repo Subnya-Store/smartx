@@ -11,7 +11,6 @@ import VerifyPlease from "../../components/dashboard/VerifyPlease";
 import Edit from "../../components/dashboard/Edit";
 import ResetPassword from "../../components/dashboard/ResetPassword";
 import Modal from "react-modal";
-import jwt_decode from "jwt-decode";
 import Deposit from "../../components/dashboard/Deposit";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -42,8 +41,7 @@ export default function profile() {
 
   useEffect(() => {
     const user = localStorage.getItem("user");
-    const decode = jwt_decode(user);
-    setdata(decode);
+    setdata(user);
   }, []);
 
   useEffect(() => {
