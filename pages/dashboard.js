@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import MainDashboard from "../src/components/Dashboard/MainDashboard";
+import MainDashboard from "../src/components/dashboard/MainDashboard";
 import Sidebar from "../src/components/dashboard/Sidebar";
 import SidebarMobile from "../src/components/dashboard/SidebarMobile";
 import { useDispatch, useSelector } from "react-redux";
